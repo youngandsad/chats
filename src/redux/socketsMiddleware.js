@@ -10,7 +10,7 @@ const socketMiddleware = store => {
 
 return next => action => {
     if(action.type === postMessage.type) {
-        socket.init('new message', action.payload)
+        socket.emit('new message', action.payload)
     }
     return next(action)
 }
