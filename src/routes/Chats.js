@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react'
-import { Link, NavLink, useHistory, useParams } from "react-router-dom";
+import { useEffect } from 'react'
+import { NavLink, useHistory, useParams } from "react-router-dom";
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addChat, fetchChats } from '../redux/ChatList'
 import { fetchMessages,postMessage } from '../redux/MessagesSlice'
-import ChatMessages from './ChatMessages'
-import { messageChatSelector } from '../redux/MessagesSlice'
 import MessageList from './MessagesList'
-import { io } from 'socket.io-client'
 
 import styles from '../style.module.css';
 
@@ -15,12 +12,9 @@ import styles from '../style.module.css';
 function Chats() {
 
 const { chatId } = useParams()
-const messages = useSelector(messageChatSelector(chatId))
 const chatlist = useSelector((state) => state.chatlist.chats)
 const dispatch = useDispatch()
  
-const socket = io('https://inordic-messenger-api.herokuapp.com/');
-
 const handleMessageSubmit = (message) => {
     dispatch(postMessage(message))
 }
@@ -46,8 +40,6 @@ const handleAddChats = () => {
 
     // history.push(`/chats/${id}`)
 }
-
-console.log(styles.itemChat);
 
 return (
     <div className="Chats">
