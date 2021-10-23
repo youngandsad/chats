@@ -1,0 +1,90 @@
+.addChat {
+  background-color: transparent;
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(210, 241, 226);
+  cursor: pointer;
+}
+
+.ItemChat {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    list-style: none;
+    width: 20%;
+    margin-top: 0;
+  }
+
+  .ItemChat li {
+    margin-bottom: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    padding: 15px;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .ItemChat li a {
+    text-decoration: none;
+  }
+
+  .chatBlock {
+    display: flex;
+    justify-content: center;
+  }
+
+  .text {
+    padding: 20px;
+    text-align: end;
+    border-radius: 15px;
+    background-color: rgb(210, 241, 226);
+    margin: 5px;
+  }
+
+  .messageBlock {
+    max-width: 80%;
+  }
+  
+  .MessageContent {
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    width: 500px;
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+  }
+
+  .chatField {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .chatField textarea {
+    width: 100%;
+    resize: none;
+    border: 1px solid lightgrey;
+    outline: none;
+    border-bottom-left-radius: 15px;
+ 
+  }
+
+  .chatField button {
+    border-bottom-right-radius: 15px;
+    background-color: transparent;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+  }
+
+  .chatField button:hover {
+    color:  rgb(210, 241, 226);
+    background-color: #000;
+  }
+
+  .activeChat {
+    padding: 15px;
+    border-bottom: 1px solid lightgrey;
+  }

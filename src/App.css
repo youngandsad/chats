@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+}
+
+.NavigationMenu {
+  display: flex;
+}
+
+.NavigationMenu a {
+  width: 100%;
+}
+
+.Chats {
+
+}
+
+.ItemChat {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+
+.ItemChat li {
+  width: 100%;
+  margin-right: 15px;
+  border: 1px solid;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.chat-field {
+  display: flex;
+  justify-content: left;
+}
+
+.MessagesList {
+  padding: 0 40px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-link-active {
+  color: red;
+}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
