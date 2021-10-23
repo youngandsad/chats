@@ -31,7 +31,10 @@ export const  MessagesSlice = createSlice({
         } else {
         state.chats[chatId].messages = [...messages, newMessage]
         }
-      },  
+      }, 
+      postMessage: () => {
+        
+      } 
   },
   extraReducers: (builder) => (
     builder.addCase(fetchMessages.fulfilled, (state, action) => {
@@ -50,7 +53,7 @@ export const  MessagesSlice = createSlice({
 
 
 // Action creators are generated for each case reducer function
-export const { addMessage } = MessagesSlice.actions
+export const { addMessage, postMessage } = MessagesSlice.actions
 
 export const messageChatSelector = chatId => state => (state.messages.chats[chatId]?.messages || [])
 

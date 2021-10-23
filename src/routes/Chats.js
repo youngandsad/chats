@@ -3,8 +3,7 @@ import { Link, NavLink, useHistory, useParams } from "react-router-dom";
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addChat, fetchChats } from '../redux/ChatList'
-import { fetchMessages } from '../redux/MessagesSlice'
-import { addMessage } from '../redux/MessagesSlice'
+import { fetchMessages,postMessage } from '../redux/MessagesSlice'
 import ChatMessages from './ChatMessages'
 import { messageChatSelector } from '../redux/MessagesSlice'
 import MessageList from './MessagesList'
@@ -23,15 +22,11 @@ const dispatch = useDispatch()
 const socket = io('https://inordic-messenger-api.herokuapp.com/');
 
 const handleMessageSubmit = (message) => {
-    socket.emit('new message', message)
+    dispatch(postMessage(message))
 }
 
 useEffect(() => {
     dispatch(fetchChats())
-    socket.on('new message', message => {
-        dispatch(addMessage(message))
-    })
-    
 }, [])
 
 useEffect(() => {
