@@ -56,6 +56,8 @@
     display: flex;
     flex-direction: column;
     align-items: self-end;
+    overflow-y: scroll;
+    height: 300px;
   }
 
   .chatField {
