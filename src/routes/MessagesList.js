@@ -5,16 +5,20 @@ import { addMessage } from '../redux/MessagesSlice'
 import ChatMessages from './ChatMessages'
 import { messageChatSelector } from '../redux/MessagesSlice'
 import styles from '../style.module.css';
+import { useAuth0 } from '@auth0/auth0-react';
+import userEvent from "@testing-library/user-event"
 
 function MessageList({chatId, onSubmit}) {
 
     const messages = useSelector(messageChatSelector(chatId))
     console.log(messages)
-    
+    const { user } = useAuth0();
+
     const handleAddMessage = (data) => {
         const newMessage = {
              chatId, 
-             text: data.text
+             text: data.text,
+             name: user.name
         }
         onSubmit(newMessage)
 
@@ -27,7 +31,7 @@ function MessageList({chatId, onSubmit}) {
         <div className={styles.MessageList}>
         <div className={styles.messages}>
             {messages.map(message => (
-                        <div key={message.id} className={styles.text}>{message.text}</div>   
+                            <div key={message.id} className={styles.text}><div>{message.name}</div> {message.text}</div> 
                     ))}
         </div>
         <ChatMessages onSubmit = {handleAddMessage}></ChatMessages>   

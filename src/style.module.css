@@ -42,6 +42,11 @@
     margin: 5px;
   }
 
+  .text div {
+    color: lightsalmon;
+    margin-bottom: 10px;
+  }
+
   .messageBlock {
     max-width: 80%;
   }

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addChat, fetchChats } from '../redux/ChatList'
 import { fetchMessages,postMessage } from '../redux/MessagesSlice'
 import MessageList from './MessagesList'
-
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
 import styles from '../style.module.css';
 
  
@@ -62,4 +62,4 @@ return (
     )
 }
 
-export default Chats 
+export default withAuthenticationRequired(Chats)
